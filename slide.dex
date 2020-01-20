@@ -1,0 +1,265 @@
+%{{{ Definimos parámetros iniciales
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+%\input{header2.tex}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usetheme{Warsaw}
+\usepackage{ragged2e} 
+
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+
+\title[Hanspeter Schmidli]{Asymptotics of ruin probabilities for risk processes under optimal reinsurance policies: the small claim case}
+\author{Montalvan Hernandez, D. Millán Freyre, M. Fuentes Luna, S.}
+\institute{Facultad de Ciencias}
+\date{\today}
+\begin{document}
+%}}}
+%inicia diapositiva
+\begin{frame}{Teoría del Riego}
+\titlepage
+\end{frame}
+
+
+%inicia diapositiva
+\begin{frame}{Objetivo}
+\justifying
+Establecer un modelo para el proceso de riesgo de una compañía de seguros, considerando que se ha hecho un contrato de reaseguro y que una porción del superávit obtenido se invierte en un activo riesgoso.
+\end{frame}
+
+%inicia diapositiva
+\begin{frame}{LIMITACIONES DEL MODELO CLASICO DE RIESGO}
+\justifying
+\begin{equation}
+C_{t}=u + ct-\sum_{i=1}^{N_{t}} {(Y_{j}}
+\end{equation}
+La compañía sólo puede pagar las reclamaciones con lo recaudado por la tasa de prima cobrada y el capital inicial invertido en t=0.
+\newline
+Esto no se cumple
+\begin{itemize}
+\item Las compañías de seguro pueden invertir el superávit en activos con riesgo (ganancia)
+\newline
+\item Concertar distintos tipos de reaseguro.
+\end{itemize}
+\end{frame}
+%inicia diapositiva
+\begin{frame}{ .}
+\justifying
+Recientemente el interés en modelos de riesgo que consideran dichos aspectos ha ido en aumento:
+\begin{itemize}
+\item Donde todo el superávit es invertido en un activo riesgoso, el cual sigue el modelo Black-Scholes
+\newline
+\item Únicamente una parte constante del superávit es invertido en dicho activo
+\newline
+\item
+O si en lugar de una fracción del superávit, se invierte un monto constante en el activo riesgoso.
+\end{itemize}
+
+
+
+\end{frame}
+
+
+
+
+
+%inicia diapositiva
+\begin{frame}{Reaseguro}
+\justifying
+Otra posibilidad, en ánimos de minimizar la probabilidad de ruina, es que la aseguradora contrate un reaseguro y así sólo paga (retiene) cierta parte de las reclamaciones y el resto corre a cargo de la reaseguradora.
+\newline
+Teóricamente, todo el riesgo puede ser reasegurado $\Rightarrow$ siempre tiene un decaimiento exponencial.
+\begin{itemize}
+\item Si el riesgo retenido por la aseguradora es linealmente decreciente y no depende del tiempo
+\newline
+\item Si es posible invertir en un activo riesgoso, modelado como un Mov Browniano con media $\mu $
+\end{itemize}
+Y sabemos que un Movimiento Browniano con media positiva tiene una proba de ruina exponencialmente decreciente.
+\end{frame}
+
+
+\begin{frame}{.}
+\justifying
+El modelo que consideraremos a partir de ahora permitirá tanto el reaseguro proporcional como la 
+inversión del superávit en un activo riesgoso.
+\end{frame}
+
+
+
+\begin{frame}{El Modelo}
+\justifying
+Sea $S_{t}=\sum_{i=1}^{N_{t}} {(Y_{j}}$ el proceso acumulado de reclamaciones del portafolio de una aseguradora, donde $\{N_{t}\}$ es un proceso Poisson con tasa $\lambda$. Las reclamaciones $\{Y_{i}\}$ son v.a.i.i.d, estrictamente positivas e independientes del proceso de arribos.
+\newline
+\newline
+Sea $M_{Y}(r)=E[exp(rY)]$ la función generadora de momentos de Y con G(y) su función de distribución.
+\newline
+\newline
+Todas las cantidades estocásticas están definidas en un  espacio de probabilidad $(\Omega, F, P)$.
+\end{frame}
+
+
+
+
+
+\begin{frame}{.}
+\justifying
+La aseguradora sigue una estrategia ( con el fin de minimizar $\phi(u)$) (A(u),b(u) $\in$ X $\subset [0,\infty]\chi [0,1])$ donde:
+\newline
+A(u) monto invertido en el activo riesgoso , modelado como movimiento Browniano geométrico:
+\newline
+\begin{equation*}
+$dZ_{t}$=$\mu$ $Z_{t}$ dt + $\sigma$ $Z_{t} d W_{t}$
+\end{equation*}
+\newline
+Donde $W_{t}$ es un movimiento Browniano {\bf estándar independiente de} $S_{t}$ y $\mu$ $\sigma > 0$.
+\end{frame}
+
+
+
+
+
+\begin{frame}{.}
+\justifying
+b(u) parte de la reclamación que será absorbida por la compañía aseguradora,$0<b(u)<1$.
+\newline
+\newline
+Si una reclamaciones Y ocurre en  t=T, tal que $S_{t}=u$ (antes del pago de la reclamación) entonces la aseguradora tiene pagará b(u)*Y y la reaseguradora el restante: (1-b(u))*Y
+\end{frame}
+
+
+
+
+
+\begin{frame}{Prima de reaseguro}
+\Justifying
+Supondremos que la compañía aseguradora paga una prima continua c(b(u)) a la reaseguradora.
+\newline
+Algunas propiedades de c(b) son:
+\newline
+\begin{itemize}
+\item c(b) es esctrictamente decreciente
+\newline
+\item c(1)=0
+\newline
+\item c $<$ c(0) $<$ $\infty$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Casos particulares}
+\begin{eqnarray*}
+X = [0,\infty)x\{1\} \mbox {Sin reaseguro}\\
+\\
+X = \{0\} $x [0,1]$ \mbox {Sin inversión}\\
+\\
+X = [0,\infty)x [0,1] \mbox {Inversión y reaseguro}
+\end{eqnarray*}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Simulación}
+\justifying
+Para realizar la simulación del modelo, se utilizó el método de Euler, el cual nos dice que para simular el proceso.
+\newline
+$dX_{t}=(c-c(b(x_{t}))+\mu A(X_{t})dt +\sigma A(X_{t})dW_{t}-b(X_{t})d S_{t} ), Xa_{0}=u$
+\newline
+\newline
+Lo único que se tiene que hacer es sustituir la notación diferencial por incrementos, es decir
+\newline
+\newline
+$X_{t}=X_{t-1}+)c-c(b(X_{t-1}))+\mu A(X_{t-1})\Delta t + \sigma A(X_{t-1}) \Delta W_{t}-b(X_{t-1}) \Delta S_{t} , X_{0}=u$
+\newline
+\newline
+
+En donde:
+$\Delta_{t}=t_{i}-t_{i-1}$
+\newline
+$\Delta_{t}=W_{t}-W_{t-1}$
+\newline
+$\Delta_{t}=S_{t}-S_{t-1}$
+\end{frame}
+
+
+
+\begin{frame}{ .}
+\justifying
+Se obtuvieron las siguientes trayectorias:
+\begin{figure}
+\includegraphics[keepaspectratio=true,width=0.45\paperwidth]{1.jpg}
+\includegraphics[keepaspectratio=true,width=0.45\paperwidth]{2.jpg}
+\end{figure}
+\end{frame}
+
+%inicia diapositiva
+\begin{frame}{Gráficas}
+\begin{center}
+\end{center}
+\begin{figure}
+\includegraphics[keepaspectratio=true,width=0.7\paperwidth]{3.jpg}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Observaciones}
+Si únicamente se invierte en el activo riesgoso, el proceso Xt tiene caídas de mayor magnitud que si se combinan inversión y reaseguro e incluso sólo reaseguro.
+\newline
+\newline
+Razón:  Al invertir en un activo riesgoso estamos sujetos a la volatilidad de este.
+\end{frame}
+
+\begin{frame}{Probabilidades de Ruina}
+\justifying
+Además de las trayectorias del proceso se obtuvieron probabilidades de ruina, considerando distintas estrategias:
+\begin{figure}
+\includegraphics[keepaspectratio=true,width=0.44\paperwidth]{5.jpg}
+\end{figure}
+
+La \textcolor{green}{línea verde } es el modelo clásico (sin inversión y sin reaseguro)
+\newline
+La \textcolor{red}{línea roja } es sólo inversión
+\newline
+La \textcolor{blue}{línea azul } es sólo reaseguro
+\newline
+La \textcolor{black}{línea negra } corresponde a una estrategia con inversión y reaseguro
+
+\end{frame}
+
+
+
+\begin{frame}{Conclusiones}
+\begin{itemize}
+\item El modelo clásico es poco realista al no considerar las distintas estrategias que puede seguir una compañía de seguros.
+\newline
+\item Al invertir en un activo con riesgo se debe tener en cuenta que la volatilidad de este puede aumentar la probabilidad de ruina y no necesariamente disminuirla, por lo tanto una estrategia basada únicamente en este tipo de inversiones podría resultar contraproducente.
+\newline
+\item El reaseguro es una estrategia que claramente disminuye la probabilidad de ruina, siempre y 
+cuando la compañía sea capaz de concertar contratos con una prima de reaseguro justa.
+\newline
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Bibliografía}
+\begin{itemize}
+\item Glasserman, Paul; Monte Carlo Methods in Financial Engineering, Springer-Verlag, New York 2004.
+\newline
+\item Glynn, Peter W. Asmussen Soren; Stochastic simulation, algorithms and analysis;Springer Science+Bussines Media, 2007
+\newline
+\item Hanspeter, Schmidli; Asymptotics of ruin probabilities for risk processes under optimal reinsurance policies: the small claim case.
+\end{itemize}
+
+
+
+
+
+
+\end{frame}
+
+\end {document}
+
+
+
