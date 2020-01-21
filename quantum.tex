@@ -126,8 +126,41 @@ Where $\ket{0}$ and $\ket{1}$ are vectors $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$
 	The $Haddamard$ gate
 	$$\mathrm{H} \equiv \frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\ 
 	1 & -1 \end{bmatrix}$$
+\end{frame}
+
+\begin{frame}{Quantum Gates}
+	\justifying 
+	Some single qubit matrices are used quite frequently and are very useful.
+	\center
+	\begin{figure}
+	\includegraphics[keepaspectratio=true,width=.8\paperwidth]{.attachments/single_qubit.png}
+	\caption{Single bit (left) and qubit (right) logic gates.}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Balanced or constant}{We are task with identifying fair vs unfair coins}
+	\justifying 
+	We represent the four possible outputs of flicking the coin as four functions $f$ that map one input bit (a=0,1 representing "heads" or "tails") onto one output bit (f(a)=0,1 standing for "head or tail").
+	\newline
+	\newline
+	\begin{figure}
+		\includegraphics[keepaspectratio=true,width=.8\paperwidth]{.attachments/t_table.png}
+		\caption{The third line is the effect of the logic $U_{f_n}$ on the bottom qubit}
+	\end{figure}
 
 \end{frame}
+
+\begin{frame}{Deutsch's algorithm}
+	\justifying 
+	Quantum circuits can outperform classical ones. Deutsch's algorithm combines quantum parallelism  with quantum interference.
+	\center
+	\begin{figure}
+	\includegraphics[keepaspectratio=true,width=.8\paperwidth]{.attachments/d_algorithm.png}
+	\caption{Quantum circuit implementing Deutsch's algorithm}
+\end{figure}
+\end{frame}
+
+
 
 \begin{frame}{Bibliografía}
 	\begin{itemize}
