@@ -65,13 +65,6 @@
 	\includegraphics[keepaspectratio=true,width=.8\paperwidth]{.attachments/Qubit.png}
 \end{frame}
 
-%Start of slide
-\begin{frame}{Dirac notation and linear algebra}
-	\justifying 
-
-	
-	
-\end{frame}
 
 %Start of slide
 \begin{frame}{Computational basis states}
@@ -87,9 +80,54 @@ Where $\ket{0}$ and $\ket{1}$ are vectors $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$
 	A superposition state is a linear combination $ \psi =\alpha_0 \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \alpha_1 \begin{pmatrix} 0 \\ 1 \end{pmatrix}$
 \end{frame}
 
+%Start of slide
+\begin{frame}{Quantum NOT gate}
+	\justifying
+	Classical computer circuits consists of wires and logic gates. E.g. the NOT gate which has a truth table $0 \rightarrow 1$ and $1 \rightarrow 0$.
+    \newline
+    \newline
+    The analogous quantum operation would take
+
+    $$\alpha_0 \ket{0} + \alpha_1 \ket{1} $$
+
+    to 
+
+    $$\alpha_0 \ket{1} + \alpha_1 \ket{0} $$
+    \newline
+    \newline
+    Since a quantum state can be represented as a vector, we are looking for a matrix such that:
+    $$\mathrm{X} \begin{bmatrix} \alpha_0 \\ \alpha_1 \end{bmatrix}=\begin{bmatrix} \alpha_1 \\ \alpha_0 \end{bmatrix}$$ 
+\end{frame}
 
 
 
+\begin{frame}{Quantum Gates}
+	\justifying
+	Quantum gates are represented by matrices applied on our vectors (qubits). Are all matrices valid Quantum Gates?...no.
+	\newline
+    \newline
+	Recall that  ${|\alpha_0|}^2+|\alpha_1|^2=1$ for a quantum state 
+	$$\alpha_0 \ket{0} + \alpha_1 \ket{1}$$.
+	This must also hold for 
+	$$\alpha_0^{'}  \ket{0} + \alpha_1^{'} \ket{1}$$
+	after the gate has acted. It turns out that the appropriate condition on the matrix representing the gate is tha the matrix $U$ be unitary. That is (with $U^{\dagger}$ is the adjoint of $U$)
+	$$U^{\dagger}U=I$$
+
+\end{frame}	
+
+\begin{frame}{Quantum Gates}
+	\justifying 
+	In classical computers we only have one non-trivial gate for one bit (NOT gate). In the case of Quantum computers we have many!
+	\newline
+	\newline
+	For example the NOT gate:
+	$$\mathrm{X} \equiv \begin{bmatrix} 0 & 1 \\ 
+										1 & 0 \end{bmatrix}$$
+	The $Haddamard$ gate
+	$$\mathrm{H} \equiv \frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\ 
+	1 & -1 \end{bmatrix}$$
+
+\end{frame}
 
 \begin{frame}{Bibliografía}
 	\begin{itemize}
